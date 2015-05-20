@@ -1,0 +1,12 @@
+main() {
+	let arr = [1,2,3,2];
+	let (i,x,j,sum) = (0,0,4,0);
+	while(i < j){
+		x =  arr[i];
+		sum = sum + x;
+		print(x);
+		i = i+1;
+	}
+	print(sum);
+}
+

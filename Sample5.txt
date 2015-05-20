@@ -1,0 +1,11 @@
+main() {
+	let arr = ['c','o','m','p','i','l','e','r'];
+	let (k,i,j) = ('a',0,9);
+	while(i < 8){
+		k = arr[i];
+		print(k);
+		i = i+1;
+	}
+	
+}
+

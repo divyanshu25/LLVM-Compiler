@@ -1,0 +1,51 @@
+1. Only the four built-in types
+    i32
+    f32
+    char 
+    string
+    boolean
+are taken into account. Every expression has one of these types.
+
+2. Types of functions in the symbol table can be represented in any way that stores their argument and return types. For instance, the function header
+
+    fn add(x:i32, y:i32) -> i32
+    
+3. All return statements in a function body must return an expression whose type is the return type of the function.
+
+4. While loops, with an expression in parentheses followed by a statement, for example:
+
+    while (i < 10){} ;
+Typing. The expression must have type boolean.
+
+
+
+5. Conditionals: if with an expression in parentheses followed by a statement, else, and another statement. Examples:
+
+    if (x > 0){ return x ;} else{ return y ;}
+Typing. The expression must have type boolean.
+
+
+
+6. types of variables are that of values assigned to them at time of declaration
+
+7. values assigned to an array should be of same type
+
+8. type of arguments passed to a function should of same type as function parameter
+
+
+9. (.) opeartor is valid only for variable of type string and only .reverse .toUpper are supported.
+
+10. The type of a simple expression (say E) of the form expression(say E1)
+<operator> Expression(say E2)
+	a. is integer, if both expressions are of type integer and the operator is
+		arithmetic operator.
+	b. is real, if both the expressions are of type real and the operator is
+		arithmetic operator.
+	c. is boolean, if both expressions are of type integer and the operator is
+		relational operator.
+	d. is boolean, if both expressions are of type real and the operator is
+		relational.
+	e. is boolean, if both expressions are of type boolean and the operator is
+		logical.
+	The type of the expression is ERROR, if the above rules do not derive the
+	type of E appropriately.

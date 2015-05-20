@@ -1,0 +1,120 @@
+Program -> Functions MAIN OPAREN CPAREN OBRACE Statements CBRACE 
+Functions -> FunctionDef Functions 
+Functions -> EPSILON 
+FunctionDef -> FN ID OPAREN parameterList CPAREN RARROW fnReturn OBRACE Statements CBRACE 
+fnReturn -> RARROW Type 
+fnReturn -> EPSILON 
+Statements -> Stmt moreStmts 
+moreStmts -> Stmt moreStmts 
+moreStmts -> EPSILON 
+Stmt -> COMMENT 
+Stmt -> ID IDStmts 
+Stmt -> IfStmt 
+Stmt -> IStmt
+Stmt -> BreakStmt 
+Stmt -> ReturnStmt 
+Stmt -> LoopStmt 
+Stmt -> OStmt 
+Stmt -> DeclarationStmt 
+Stmt -> AssignStmtType2 
+ReturnStmt       -> RETURN relType SEMICOLON 
+BreakStmt        -> BREAK SEMICOLON 
+DeclarationStmt  -> LET mutMod moreDeclarations SEMICOLON 
+moreDeclarations -> Declaration 
+moreDeclarations -> AssignStmtType2 
+mutMod          -> MUT 
+mutMod -> EPSILON 
+Declaration      -> ID ASSIGNOP arithExpn moreTypes 
+moreTypes        -> COMMA Declaration 
+moreTypes -> EPSILON 
+AssignStmtType2  -> listTypes ASSIGNOP OPAREN multAssn CPAREN 
+listTypes        -> OPAREN typeList CPAREN 
+typeList         -> ID moreList 
+moreList         -> COMMA typeList 
+moreList -> EPSILON 
+singleAssn       -> arithExpn 
+multAssn         -> singleAssn moreAssn 
+moreAssn         -> COLON multAssn 
+moreAssn -> COMMA multAssn 
+moreAssn -> EPSILON 
+IDStmts  -> OSQUARE ID CSQUARE OSQUARE ID CSQUARE AssignStmtType1 
+IDStmts  -> FunCallStmt 
+IDStmts  -> AssignStmtType1 
+IDStmts  -> MethodStmt 
+IDStmts2 -> FunCall 
+IDStmts2 -> MethodCall 
+IDStmts2 -> Index 
+IDStmts2 -> EPSILON 
+Index -> OSQUARE ID CSQUARE moreIndex 
+Index -> ID 
+Index -> NUM 
+moreIndex -> OSQUARE ID CSQUARE 
+moreIndex -> EPSILON 
+AssignStmtType1  -> ASSIGNOP singleAssn SEMICOLON 
+FunCall          -> OPAREN IDList CPAREN 
+MethodCall       -> DOT ID FunCall 
+FunCallStmt      -> FunCall SEMICOLON 
+MethodStmt       -> MethodCall SEMICOLON 
+Type -> BOOL 
+Type -> F32 
+Type -> I32 
+Type -> string
+Type -> char 
+parameterList    -> ID COLON type remainingList 
+remainingList    -> COMMA parameterList 
+remainingList    -> EPSILON 
+IfStmt           -> IF OPAREN boolExpn CPAREN OBRACE Statements CBRACE ElseStmt 
+ElseStmt         -> ELSEIF OPAREN boolExpn CPAREN OBRACE Statements CBRACE ElseStmt 
+ElseStmt         -> ELSE OBRACE Statements CBRACE 
+ElseStmt         -> EPSILON 
+IStmt            -> SCAN OPAREN ID CPAREN SEMICOLON 
+OStmt            -> PRINT OPAREN ID CPAREN SEMICOLON 
+value            -> CHARL 
+value            -> NUM 
+value            -> STRINGL 
+value            -> boolean 
+value            -> array 
+value            -> grid 
+value		 -> FLOAT
+array            -> OSQUARE multAssn CSQUARE 
+IDList           -> ID moreIds
+IDLIst			 -> value moreIds 
+IDList           -> EPSILON 
+moreIds          -> COMMA IDList 
+moreIds          -> EPSILON 
+arithExpn        -> arithTerm moreTerms  
+arithExpn        -> value
+moreTerms        -> opLow arithExpn 
+moreTerms        -> EPSILON 
+arithTerm        -> factor moreFactors 
+moreFactors      -> opHigh arithTerm
+moreFactors      -> EPSILON 
+factor           -> OPAREN arithExpn CPAREN 
+factor           -> relType 
+opLow            -> MINUS 
+opLow            -> PLUS 
+relType          -> ID IDStmts2 
+relType          -> value 
+opHigh           -> DIV 
+opHigh           -> MUL 
+boolExpn         -> OPAREN boolExpn CPAREN logicalOp OPAREN boolExpn CPAREN
+boolExpn         -> relType relationalOp relType 
+logicalOp        -> AND 
+logicalOp        -> NOT 
+logicalOp        -> OR 
+relationalOp     -> EQ 
+relationalOp     -> GT 
+relationalOp     -> GT 
+relationalOp     -> LT  
+relationalOp     -> LT 
+relationalOp     -> NE 
+LoopStmt         -> WHILE OPAREN boolExpn CPAREN OBRACE Statements CBRACE 
+grid             -> OBRACE rows CBRACE 
+rows             -> row moreRows 
+moreRows         -> COLON rows  
+moreRows         -> EPSILON 
+row              -> NUM moreNums 
+moreNums         -> COMMA NUM moreNums 
+moreNums         -> EPSILON 
+boolean          -> FALSE 
+boolean          -> TRUE

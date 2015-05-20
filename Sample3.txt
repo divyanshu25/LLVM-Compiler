@@ -1,0 +1,15 @@
+main() {
+	let (i,j)= (4,3);
+	let (s1,s2,s3) = (1,2,3);
+	if( i < j){
+		print(s1);
+	}
+	eif(j < i){
+		print(s2);
+	}
+	else{
+		print(s3);
+	}
+	
+}
+

@@ -1,0 +1,9 @@
+**********FUNCTION INFORMATION************
+Function 1:
+	Name:MAIN 	 ReturnType: -1
+*********SYMBOL TABLE **************
+FuncName	VarName		Class	isMut	Scope	RefCnt	DecAt	Type	  Value		ReferrencedAtLine
+MAIN            gr               Arr      0       0       0       2      231,2,3,3,4,5,5,6,7,		
+MAIN             a               Var      1       0       2       3      23           0		4,5,
+MAIN             x               Var      1       0       0       3      23           2		
+MAIN             y               Var      1       0       0       3      23           2		

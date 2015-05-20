@@ -1,0 +1,9 @@
+let mut min = arr[0]; // index of array in ID not NUM
+value was not reachable in grammar
+see line 83 in grammar for new rule added arithExpn -> value
+print(ID) in only possible
+array ass can have only numbers
+AssignStmtType2 -> listTypes ASSIGNOP OPAREN multAssn CPAREN SEMICOLON // remove last SEMICOLON 
+index more index
+funcCall IDlist
+IDList -> value moreIds. new rule added

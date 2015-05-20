@@ -1,0 +1,12 @@
+main() {
+	let msg = "Compiler";
+	if(0  > 1){
+		msg.reverse();
+		print(msg);
+	}
+	else{
+		msg.toUpper();
+		print(msg);
+	}		
+}
+

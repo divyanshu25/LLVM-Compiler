@@ -1,0 +1,21 @@
+1. An identifier cannot be declared multiple times in the same scope.
+2. An identifier must be declared before its use.
+3. The types returned by a function must be the same as that of variable used to store the return value of the function.
+
+4. Function input parameters passed while invoking it should be of the same
+   type as those used in the function definition. Number of input parameters
+   must be same as that of those used in the function definition.
+
+
+5. Two functions declarations cannot have same name.
+
+6. Function overLoading is not allowed.
+
+7. The function cannot be invoked recursively.
+
+8. An identifier used beyond its scope must be viewed as undefined
+
+9. The right hand side expression of an assignment statement must be of the
+same type as that of the left hand side identifier.
+
+10. each program should have a main function.

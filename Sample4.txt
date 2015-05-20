@@ -1,0 +1,14 @@
+main() {
+	let arr = [4,6,3,7];
+	let  (i,x,min,t) = (0,0,9,8);
+	while(i < 4) {
+		x = arr[i];
+		if(x < min){
+			min = x;
+			print(min);
+		}
+		i = i+1;
+	}
+	print(min);
+}
+
